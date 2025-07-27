@@ -1,0 +1,319 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porvenir Greencapital - Invierte en un Futuro Sostenible</title>
+    <!-- Enlace a Google Fonts para Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Enlace a Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de Tailwind CSS para colores y fuentes personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'verde-principal': '#2D6A4F',
+                        'verde-hoja-clara': '#95D5B2',
+                        'verde-medio': '#52B788',
+                        'verde-oliva': '#A3B18A',
+                        'fondo-claro': '#FAF9F6',
+                        'texto-oscuro': '#1B4332',
+                        'whatsapp-green': '#25D366',
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-poppins text-texto-oscuro bg-fondo-claro overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="bg-fondo-claro w-full h-20 flex items-center justify-between px-5 md:px-10 relative z-20 shadow-sm">
+        <div class="flex-grow flex justify-center md:justify-start">
+            <img src="images\Logo.png" alt="Logo Porvenir Greencapital" class="h-[50px] w-[180px] mt-[15px] object-contain">
+        </div>
+        
+        <!-- Menú Mobile -->
+        <button id="hamburger-menu" class="md:hidden text-verde-principal text-2xl p-2 mr-5 mt-7">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Menú de Navegación (Desktop) -->
+        <nav class="hidden md:flex space-x-8 items-center mt-7">
+            <a href="#intro" class="text-texto-oscuro hover:text-verde-principal font-semibold">Inicio</a>
+            <a href="#beneficios" class="text-texto-oscuro hover:text-verde-principal font-semibold">Beneficios</a>
+            <a href="#como-funciona" class="text-texto-oscuro hover:text-verde-principal font-semibold">Cómo Funciona</a>
+            <a href="#planes" class="text-texto-oscuro hover:text-verde-principal font-semibold">Planes</a>
+            <a href="#contacto" class="text-texto-oscuro hover:text-verde-principal font-semibold">Contacto</a>
+            <button class="bg-verde-principal text-fondo-claro font-bold py-2 px-6 rounded-full hover:bg-verde-medio transition duration-300 shadow-md">
+                Acceso Clientes
+            </button>
+        </nav>
+    </header>
+
+    <!-- Overlay del Menú Móvil -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-70 z-30 hidden transition-opacity duration-300 opacity-0">
+        <div class="bg-fondo-claro w-3/4 h-full absolute right-0 top-0 shadow-lg p-8 transform translate-x-full transition-transform duration-300">
+            <button id="close-menu" class="absolute top-8 right-8 text-verde-principal text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav class="flex flex-col space-y-6 mt-20">
+                <a href="#intro" class="text-texto-oscuro text-lg font-semibold hover:text-verde-principal" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden'); document.getElementById('mobile-menu-overlay').classList.remove('opacity-100'); document.getElementById('mobile-menu-overlay').children[0].classList.remove('translate-x-0');">Inicio</a>
+                <a href="#beneficios" class="text-texto-oscuro text-lg font-semibold hover:text-verde-principal" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden'); document.getElementById('mobile-menu-overlay').classList.remove('opacity-100'); document.getElementById('mobile-menu-overlay').children[0].classList.remove('translate-x-0');">Beneficios</a>
+                <a href="#como-funciona" class="text-texto-oscuro text-lg font-semibold hover:text-verde-principal" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden'); document.getElementById('mobile-menu-overlay').classList.remove('opacity-100'); document.getElementById('mobile-menu-overlay').children[0].classList.remove('translate-x-0');">Cómo Funciona</a>
+                <a href="#planes" class="text-texto-oscuro text-lg font-semibold hover:text-verde-principal" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden'); document.getElementById('mobile-menu-overlay').classList.remove('opacity-100'); document.getElementById('mobile-menu-overlay').children[0].classList.remove('translate-x-0');">Planes</a>
+                <a href="#contacto" class="text-texto-oscuro text-lg font-semibold hover:text-verde-principal" onclick="document.getElementById('mobile-menu-overlay').classList.add('hidden'); document.getElementById('mobile-menu-overlay').classList.remove('opacity-100'); document.getElementById('mobile-menu-overlay').children[0].classList.remove('translate-x-0');">Contacto</a>
+                <button class="bg-verde-principal text-fondo-claro font-bold py-3 px-6 rounded-full mt-6 hover:bg-verde-medio transition duration-300 shadow-md">
+                    Acceso Clientes
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <main>
+        <!--Sección Introductoria -->
+        <section id="intro" class="bg-verde-principal w-full py-8 md:py-16 px-5 md:px-10 flex flex-col md:flex-row items-center justify-center text-center md:text-left min-h-[480px] bg-gradient-to-b from-fondo-claro to-verde-hoja-clara/[0.2]">
+            <div class="md:w-1/2 flex justify-center md:justify-end md:pr-8 mb-8 md:mb-0">
+                <img src="images\photo-1.avif" alt="Ilustración de paneles solares" class="w-[380px] h-[300px] object-cover rounded-xl shadow-lg mt-8 md:mt-0">
+            </div>
+            <div class="md:w-1/2 md:pl-8">
+                <h1 class="font-bold text-2xl md:text-4xl text-verde-principal leading-tight mb-4 mt-6 md:mt-0">
+                    Invierte en un futuro sostenible
+                </h1>
+                <p class="text-base md:text-lg text-texto-oscuro leading-relaxed mb-8 px-4 md:px-0">
+                    Haz crecer tu dinero mientras apoyas proyectos de energía renovable y sostenibilidad ambiental.
+                </p>
+                <div class="flex flex-col md:flex-row justify-center md:justify-start gap-4">
+                    <button class="bg-verde-principal text-fondo-claro font-bold py-3 px-8 rounded-full shadow-lg hover:bg-verde-medio transition duration-300 w-[280px] md:w-auto mx-auto md:mx-0">
+                        Quiero más información
+                    </button>
+                    <button class="bg-white border-2 border-verde-principal text-verde-principal font-bold py-3 px-8 rounded-full shadow-lg hover:bg-verde-hoja-clara/[0.4] transition duration-300 w-[280px] md:w-auto mx-auto md:mx-0 md:hidden lg:inline-block">
+                        Ver Proyectos
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de beneficios -->
+        <section id="beneficios" class="w-full py-10 md:py-16 px-5 md:px-10 bg-verde-hoja-clara/[0.2]">
+            <h2 class="font-bold text-2xl md:text-3xl text-verde-principal text-center mb-8 mt-10 md:mt-0">
+                ¿Por qué elegir Greencapital?
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-6xl mx-auto py-5">
+                <div class="bg-fondo-claro rounded-xl p-4 md:p-6 text-center shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-money-bill-wave text-verde-principal text-3xl mb-3 mt-4"></i>
+                    <h3 class="font-bold text-sm md:text-base text-texto-oscuro mb-2">Rentabilidad competitiva</h3>
+                    <p class="text-xs md:text-sm text-texto-oscuro leading-tight">Obtén rendimientos atractivos</p>
+                </div>
+                <div class="bg-fondo-claro rounded-xl p-4 md:p-6 text-center shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-leaf text-verde-principal text-3xl mb-3 mt-4"></i>
+                    <h3 class="font-bold text-sm md:text-base text-texto-oscuro mb-2">Energías renovables</h3>
+                    <p class="text-xs md:text-sm text-texto-oscuro leading-tight">Apoya proyectos verdes</p>
+                </div>
+                <div class="bg-fondo-claro rounded-xl p-4 md:p-6 text-center shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-lock text-verde-principal text-3xl mb-3 mt-4"></i>
+                    <h3 class="font-bold text-sm md:text-base text-texto-oscuro mb-2">Seguridad garantizada</h3>
+                    <p class="text-xs md:text-sm text-texto-oscuro leading-tight">Respaldo institucional</p>
+                </div>
+                <div class="bg-fondo-claro rounded-xl p-4 md:p-6 text-center shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-chart-line text-verde-principal text-3xl mb-3 mt-4"></i>
+                    <h3 class="font-bold text-sm md:text-base text-texto-oscuro mb-2">Gestión transparente</h3>
+                    <p class="text-xs md:text-sm text-texto-oscuro leading-tight">Monitoreo en línea</p>
+                </div>
+            </div>
+        </section>
+
+        <!--sección como funciona -->
+        <section id="como-funciona" class="w-full py-10 md:py-16 px-5 md:px-10 bg-verde-hoja-clara/[0.2]">
+            <h2 class="font-bold text-2xl md:text-3xl text-verde-principal text-center mb-8 mt-10 md:mt-0">
+                ¿Cómo funciona?
+            </h2>
+            <div class="max-w-3xl mx-auto flex flex-col md:flex-row md:justify-around md:items-start space-y-8 md:space-y-0 md:space-x-8">
+                <!-- Paso 1 -->
+                <div class="flex items-center md:flex-col md:text-center md:w-1/3">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-verde-principal rounded-full flex items-center justify-center flex-shrink-0 mr-4 md:mr-0 md:mb-4 shadow-md">
+                        <span class="font-bold text-xl md:text-2xl text-fondo-claro">1</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base md:text-lg text-texto-oscuro mb-1">Regístrate</h3>
+                        <p class="text-sm md:text-base text-texto-oscuro leading-tight">Completa el formulario y verifica tu identidad</p>
+                    </div>
+                </div>
+                <!-- Paso 2 -->
+                <div class="flex items-center md:flex-col md:text-center md:w-1/3">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-verde-principal rounded-full flex items-center justify-center flex-shrink-0 mr-4 md:mr-0 md:mb-4 shadow-md">
+                        <span class="font-bold text-xl md:text-2xl text-fondo-claro">2</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base md:text-lg text-texto-oscuro mb-1">Elige tu plan</h3>
+                        <p class="text-sm md:text-base text-texto-oscuro leading-tight">Selecciona el monto y plazo que mejor se adapte a ti</p>
+                    </div>
+                </div>
+                <!-- Paso 3 -->
+                <div class="flex items-center md:flex-col md:text-center md:w-1/3">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-verde-principal rounded-full flex items-center justify-center flex-shrink-0 mr-4 md:mr-0 md:mb-4 shadow-md">
+                        <span class="font-bold text-xl md:text-2xl text-fondo-claro">3</span>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base md:text-lg text-texto-oscuro mb-1">Comienza a invertir</h3>
+                        <p class="text-sm md:text-base text-texto-oscuro leading-tight">Transfiere y comienza a generar rendimientos verdes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planes-->
+        <section id="planes" class="w-full py-10 md:py-16 px-5 md:px-10 bg-fondo-claro">
+            <h2 class="font-bold text-2xl md:text-3xl text-verde-principal text-center mb-4 mt-10 md:mt-0">
+                Planes de inversión
+            </h2>
+            <p class="text-base md:text-lg text-texto-oscuro text-center mb-10 px-4">
+                Elige el plan que mejor se adapte a tus objetivos
+            </p>
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row md:justify-center md:space-x-6 space-y-6 md:space-y-0">
+                <div class="bg-verde-hoja-clara rounded-xl p-5 flex items-center justify-between shadow-md border-2 border-transparent hover:border-verde-principal transition duration-300 md:w-1/3">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-lg text-texto-oscuro mb-2">Plan Verde</h3>
+                        <p class="text-sm text-texto-oscuro mb-1">Desde $500.000</p>
+                        <p class="font-bold text-base text-verde-principal mb-2">8% anual</p>
+                        <p class="text-xs text-texto-oscuro">12 meses</p>
+                    </div>
+                    <button class="bg-verde-principal text-fondo-claro font-bold py-2 px-6 rounded-full text-sm hover:bg-verde-medio transition duration-300 shadow-md flex-shrink-0">
+                        Elegir
+                    </button>
+                </div>
+                <div class="bg-verde-hoja-clara rounded-xl p-5 flex items-center justify-between shadow-lg border-2 border-verde-principal md:w-1/3 transform scale-105">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-lg text-texto-oscuro mb-2">Plan Sostenible</h3>
+                        <p class="text-sm text-texto-oscuro mb-1">Desde $2.000.000</p>
+                        <p class="font-bold text-base text-verde-principal mb-2">10% anual</p>
+                        <p class="text-xs text-texto-oscuro">18 meses</p>
+                    </div>
+                    <button class="bg-verde-principal text-fondo-claro font-bold py-2 px-6 rounded-full text-sm hover:bg-verde-medio transition duration-300 shadow-md flex-shrink-0">
+                        Elegir
+                    </button>
+                </div>
+                <div class="bg-verde-hoja-clara rounded-xl p-5 flex items-center justify-between shadow-md border-2 border-transparent hover:border-verde-principal transition duration-300 md:w-1/3">
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-lg text-texto-oscuro mb-2">Plan Futuro</h3>
+                        <p class="text-sm text-texto-oscuro mb-1">Desde $5.000.000</p>
+                        <p class="font-bold text-base text-verde-principal mb-2">12% anual</p>
+                        <p class="text-xs text-texto-oscuro">24 meses</p>
+                    </div>
+                    <button class="bg-verde-principal text-fondo-claro font-bold py-2 px-6 rounded-full text-sm hover:bg-verde-medio transition duration-300 shadow-md flex-shrink-0">
+                        Elegir
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de confianza-->
+        <section id="confianza" class="w-full py-10 md:py-16 px-5 md:px-10 bg-gradient-to-b from-verde-medio/[0.15] to-fondo-claro">
+            <h2 class="font-bold text-2xl md:text-3xl text-verde-principal text-center mb-8 mt-10 md:mt-0">
+                Miles confían en nosotros
+            </h2>
+            <div class="flex flex-col md:flex-row justify-around items-center max-w-4xl mx-auto mb-10 space-y-8 md:space-y-0">
+                <div class="text-center w-full md:w-1/3 px-4">
+                    <p class="font-bold text-3xl text-verde-principal mb-1">500+</p>
+                    <p class="text-sm text-texto-oscuro leading-tight">Familias invirtiendo</p>
+                </div>
+                <div class="text-center w-full md:w-1/3 px-4">
+                    <p class="font-bold text-3xl text-verde-principal mb-1">$1.2M</p>
+                    <p class="text-sm text-texto-oscuro leading-tight">Capital invertido</p>
+                </div>
+                <div class="text-center w-full md:w-1/3 px-4">
+                    <p class="font-bold text-3xl text-verde-principal mb-1">15</p>
+                    <p class="text-sm text-texto-oscuro leading-tight">Proyectos verdes</p>
+                </div>
+            </div>
+
+            <!-- Testimonio -->
+            <div class="bg-fondo-claro rounded-xl p-6 mx-5 md:mx-auto max-w-3xl shadow-md border-l-4 border-verde-principal">
+                <p class="text-base italic text-texto-oscuro mb-4">
+                    "Excelente plataforma. He visto crecer mi inversión mientras apoyo proyectos que realmente importan."
+                </p>
+                <p class="font-bold text-sm text-verde-principal text-right">
+                    - María González, Bogotá
+                </p>
+            </div>
+        </section>
+
+        <!-- Formulario de contacto -->
+        <section id="contacto" class="w-full py-10 md:py-16 px-5 md:px-10 bg-gradient-to-b from-verde-hoja-clara/[0.3] to-fondo-claro">
+            <h2 class="font-bold text-2xl md:text-3xl text-verde-principal text-center mb-8 mt-10 md:mt-0">
+                ¡Comienza hoy!
+            </h2>
+            <div class="max-w-xl mx-auto md:flex md:space-x-8">
+                <form class="w-full md:w-1/2">
+                    <input type="text" placeholder="Nombre completo" class="w-full p-3 mb-4 rounded-lg border border-verde-hoja-clara bg-fondo-claro placeholder-verde-oliva focus:outline-none focus:border-verde-principal transition duration-300 text-sm md:text-base">
+                    <input type="email" placeholder="Correo electrónico" class="w-full p-3 mb-4 rounded-lg border border-verde-hoja-clara bg-fondo-claro placeholder-verde-oliva focus:outline-none focus:border-verde-principal transition duration-300 text-sm md:text-base">
+                    <input type="tel" placeholder="Teléfono" class="w-full p-3 mb-4 rounded-lg border border-verde-hoja-clara bg-fondo-claro placeholder-verde-oliva focus:outline-none focus:border-verde-principal transition duration-300 text-sm md:text-base">
+                    
+                    <div class="flex items-center mb-6">
+                        <input type="checkbox" id="data-policy" class="mr-2 h-4 w-4 text-verde-principal rounded focus:ring-verde-principal border-verde-hoja-clara">
+                        <label for="data-policy" class="text-xs md:text-sm text-texto-oscuro">Acepto las políticas de tratamiento de datos</label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-verde-principal text-fondo-claro font-bold py-3 rounded-lg shadow-md hover:bg-verde-medio transition duration-300 text-base md:text-lg">
+                        Enviar
+                    </button>
+                </form>
+                <div class="hidden md:block md:w-1/2 mt-8 md:mt-0 text-texto-oscuro">
+                    <h3 class="font-bold text-lg mb-4">Contáctanos directamente:</h3>
+                    <p class="mb-2"><i class="fas fa-envelope text-verde-principal mr-2"></i> info@greencapital.com</p>
+                    <p class="mb-2"><i class="fas fa-phone-alt text-verde-principal mr-2"></i> +57 310 123 4567</p>
+                    <p class="mb-2"><i class="fas fa-map-marker-alt text-verde-principal mr-2"></i> Calle 123 #45-67, Bogotá, Colombia</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="#" class="text-verde-principal hover:text-verde-medio text-2xl"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-verde-principal hover:text-verde-medio text-2xl"><i class="fab fa-x"></i></a>
+                        <a href="#" class="text-verde-principal hover:text-verde-medio text-2xl"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-verde-medio w-full py-8 md:py-12 px-5 md:px-10 text-fondo-claro text-center">
+            <div class="max-w-6xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center">
+                <div class="mb-6 md:mb-0 md:w-1/3">
+                    <img src="images\Logo.png" alt="Logo pequeño Porvenir Greencapital" class="h-[50px] w-[120px] object-contain mx-auto mb-4">
+                    <p class="text-xs md:text-sm leading-tight mb-4">
+                        Invirtiendo en el futuro sostenible de Colombia
+                    </p>
+                </div>
+                <div class="mb-6 md:mb-0 md:w-1/2">
+                    <nav class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-xs md:text-sm">
+                        <a href="#" class="hover:underline">Términos y condiciones</a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:underline">Aviso legal</a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:underline">Política de datos</a>
+                    </nav>
+                </div>
+                <div class="md:w-1/3 flex justify-center md:justify-end space-x-4">
+                    <a href="#" class="text-fondo-claro hover:text-verde-principal text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-fondo-claro hover:text-verde-principal text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-fondo-claro hover:text-verde-principal text-xl"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <p class="text-xs mt-8">&copy; 2025 Porvenir Greencapital. Todos los derechos reservados.</p>
+        </footer>
+    </main>
+
+    <!-- Botón de whatsapp -->
+    <a href="https://wa.me/573101234567?text=Hola,%20quiero%20información%20sobre%20Porvenir%20Greencapital" target="_blank" class="fixed bottom-6 right-6 z-50 bg-whatsapp-green text-fondo-claro w-16 h-16 rounded-full flex items-center justify-center shadow-lg whatsapp-button hover:scale-110 transition-transform duration-300" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Enlace a tu archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

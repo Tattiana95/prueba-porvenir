@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root {
+    --verde-principal: #2D6A4F;
+    --verde-hoja-clara: #95D5B2;
+    --verde-medio: #52B788;
+    --verde-oliva: #A3B18A;
+    --fondo-claro: #FAF9F6;
+    --texto-oscuro: #1B4332;
+    --whatsapp-green: #25D366;
+}
+
+/* Estilos y fuentes principales*/
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--texto-oscuro);
+    background-color: var(--fondo-claro);
+    overflow-x: hidden;
+}
+
+/* Animación de pulso para el botón de WhatsApp */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-button {
+    animation: pulse 2s infinite;
+}
+
+/* Estilos para el overlay del menú móvil */
+#mobile-menu-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+
+#mobile-menu-overlay > div {
+    transition: transform 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--fondo-claro);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--verde-hoja-clara);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--verde-medio);
+}
+
+img[alt*="placeholder"] {
+    object-fit: cover; 
+}
+
+/* Estilos para los íconos en las tarjetas de beneficios */
+.fa-money-bill-wave,
+.fa-leaf,
+.fa-lock,
+.fa-chart-line {
+    font-size: 32px; 
+    color: var(--verde-principal); 
+}
+
+/* Estilos para los íconos numerados en la sección "Cómo funciona" */
+.how-it-works-icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--verde-principal);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-right: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.how-it-works-icon span {
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--fondo-claro);
+}
+
+@media (min-width: 768px) {
+    .how-it-works-icon {
+        width: 64px; 
+        height: 64px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    .how-it-works-icon span {
+        font-size: 24px;
+    }
+}
